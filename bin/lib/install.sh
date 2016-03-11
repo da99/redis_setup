@@ -37,7 +37,7 @@ install () {
 
   local CONFIG="$ORIGIN/config/redis.conf"
   if [[ -d $ORIGIN/config && ! -f "$CONFIG" ]]; then
-    cp -i redis.conf "$CONFIG"
+    cp -i $THIS_DIR/redis.template.conf "$CONFIG"
     bash_setup GREEN "=== Wrote {{redis.conf}}  to: {{$CONFIG}}"
   fi
 
