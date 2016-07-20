@@ -60,16 +60,7 @@ case $action in
     ;;
 
   *)
-    func_file="$THIS_DIR/bin/public/${action}/_.sh"
-    if [[ -s "$func_file" ]]; then
-      source "$func_file"
-      "$action" $@
-      exit 0
-    fi
-
-    # === It's an error:
-    echo "!!! Unknown action: $action" 1>&2
-    exit 1
+    mksh_setup name-to-func "$0" "$action" "$@"
     ;;
 
 esac
