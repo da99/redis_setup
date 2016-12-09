@@ -30,15 +30,15 @@ install () {
   cd $SRC
 
   cp -f src/redis-server "$PREFIX/bin/"
-  bash_setup GREEN "=== Installed {{redis-server}} to: $PREFIX/bin"
+  sh_color GREEN "=== Installed {{redis-server}} to: $PREFIX/bin"
 
   cp -f src/redis-cli    "$PREFIX/bin/"
-  bash_setup GREEN "=== Installed {{redis-cli}} to: $PREFIX/bin"
+  sh_color GREEN "=== Installed {{redis-cli}} to: $PREFIX/bin"
 
   local CONFIG="$ORIGIN/config/redis.conf"
   if [[ -d $ORIGIN/config && ! -f "$CONFIG" ]]; then
     cp -i $THIS_DIR/redis.template.conf "$CONFIG"
-    bash_setup GREEN "=== Wrote {{redis.conf}}  to: {{$CONFIG}}"
+    sh_color GREEN "=== Wrote {{redis.conf}}  to: {{$CONFIG}}"
   fi
 
 } # === end function
