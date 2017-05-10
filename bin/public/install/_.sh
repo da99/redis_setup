@@ -1,5 +1,5 @@
 
-# === {{CMD}} ...
+# === {{CMD}}
 install () {
   local ORIGIN="$PWD"
   local TEMP="$THIS_DIR/tmp"
